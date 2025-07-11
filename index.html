@@ -2,74 +2,80 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Sign-up Form</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Sign-up Form</title>
 </head>
 
 <body>
-    <div class="signup-container" id="signup-container">
+  <div class="signup-container" id="signup-container">
 
-        <div class="signup-image" id="signup-image">
-            <img src="Image/logo-background.jpg" alt="Signup background image" class="bg-img">
-            <div class="logo-overlay">
-                <img src="Image/odin-lined.png" alt="logo image" class="logo-img">
-                <span class="logo">ODIN</span>
-            </div>
-        </div>
-
-        <div class="signup-content" id="signup-content">
-            
-            <div class="signup-message" id="signup-message">
-                <p class="caption">This is not real online service! You know you need something like this in your life
-                    to help you realize your deepest dream.<br>Sign up <span>now</span> to get started.</p>
-                
-                <p class="caption">You <span>know</span> you want to.</p>
-            </div>
-
-            <div class="signup-form" id="signup-form">
-                <p class="caption">Let's do this!</p>
-                <form action="example.com" method="post">
-                    <div class="form-row">
-                        <label for="first-name">FIRST NAME</label>
-                        <input type="text" id="first-name" name="first-name" required>
-                    </div>
-
-                    <div class="form-row">
-                        <label for="last-name">LAST NAME</label>
-                        <input type="text" id="last-name" name="last-name" required>
-                    </div>
-
-                    <div class="form-row">
-                        <label for="email">EMAIL</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-row">
-                        <label for="phone">PHONE NUMBER</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-
-                    <div class="form-row">
-                        <label for="password">PASSWORD</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-
-                    <div class="form-row">
-                        <label for="confirm-password">CONFIRM PASSWORD</label>
-                        <input type="password" id="confirm-password" name="confirm-password" required>
-                    </div>
-                </form>
-            </div>
-
-            <div class="signup-footer" id="signup-footer">
-                <button type="submit" class="submit-btn">Create Account</button>
-                <p class="caption">Already have an account? <a href="#" class="login-link">Log in</a></p>
-            </div>
-        </div>
+    <div class="signup-image" id="signup-image">
+      <img src="Image/logo-background.jpg" alt="Signup background image" class="bg-img" />
+      <div class="logo-overlay">
+        <img src="Image/odin-lined.png" alt="logo image" class="logo-img" />
+        <span class="logo">ODIN</span>
+      </div>
     </div>
-    <script src="app.js"></script>
+
+    <div class="signup-content" id="signup-content">
+
+      <div class="signup-message" id="signup-message">
+        <p class="caption">This is not real online service! You know you need something like this in your life
+          to help you realize your deepest dream.<br>Sign up <span>now</span> to get started.</p>
+        <p class="caption">You <span>know</span> you want to.</p>
+      </div>
+
+      <div class="signup-form-wrapper" id="signup-form-wrapper">
+        <p class="caption">Let's do this!</p>
+        <form id="signup-form" action="example.com" method="post">
+          <div class="form-row">
+            <label for="first-name">FIRST NAME</label>
+            <input type="text" id="first-name" name="first-name" required />
+            <span class="error-msg" id="first-name-error"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="last-name">LAST NAME</label>
+            <input type="text" id="last-name" name="last-name" />
+          </div>
+
+          <div class="form-row">
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" name="email" required />
+            <span class="error-msg" id="email-error"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="phone">PHONE NUMBER</label>
+            <input type="tel" id="phone" name="phone" required />
+            <span class="error-msg" id="phone-error"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="password">PASSWORD</label>
+            <input type="password" id="password" name="password" required />
+            <span class="error-msg" id="password-error"></span>
+          </div>
+
+          <div class="form-row">
+            <label for="confirm-password">CONFIRM PASSWORD</label>
+            <input type="password" id="confirm-password" name="confirm-password" required />
+            <span class="error-msg" id="confirm-password-error"></span>
+          </div>
+
+          <div class="signup-footer" id="signup-footer">
+            <button type="submit" class="submit-btn">Create Account</button>
+            <p class="caption">Already have an account? <a href="#" class="login-link">Log in</a></p>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 
-</html> 
+</html>
