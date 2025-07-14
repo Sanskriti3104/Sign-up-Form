@@ -59,7 +59,6 @@ myForm.addEventListener("submit", function (event) {
         passwordError.textContent = "Password must be at least 8 characters.";
         isValid = false;
     } else {
-        // Confirm Password validation
         if (confirmPassword.value.trim() === "") {
             confirmPasswordError.textContent = "Please confirm your password.";
             isValid = false;
@@ -68,8 +67,6 @@ myForm.addEventListener("submit", function (event) {
             isValid = false;
         }
     }
-
-
 
     if (isValid) {
         myForm.submit();
