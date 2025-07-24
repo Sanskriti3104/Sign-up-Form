@@ -22,8 +22,9 @@ myForm.addEventListener("submit", function (event) {
     passwordError.textContent = "";
     confirmPasswordError.textContent = "";
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const phonePattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    const digitCount = /^\d{10}$/;
 
     let isValid = true;
 
@@ -51,6 +52,11 @@ myForm.addEventListener("submit", function (event) {
         isValid = false;
     }
 
+    if(!digitCount.test(phone.value.trim())) {
+        phoneError.textContent = "Please enter a valid 10-digit phone number.";
+        isValid = false;
+    }
+
     // Password validation
     if (password.value.trim() === "") {
         passwordError.textContent = "Password is required.";
@@ -58,14 +64,15 @@ myForm.addEventListener("submit", function (event) {
     } else if (password.value.length < 8) {
         passwordError.textContent = "Password must be at least 8 characters.";
         isValid = false;
-    } else {
-        if (confirmPassword.value.trim() === "") {
-            confirmPasswordError.textContent = "Please confirm your password.";
-            isValid = false;
-        } else if (confirmPassword.value !== password.value) {
-            confirmPasswordError.textContent = "Passwords do not match.";
-            isValid = false;
-        }
+    }
+
+    // Confirm Password validation
+    if (confirmPassword.value.trim() === "") {
+        confirmPasswordError.textContent = "Please confirm your password.";
+        isValid = false;
+    } else if (confirmPassword.value !== password.value) {
+        confirmPasswordError.textContent = "Passwords do not match.";
+        isValid = false;
     }
 
     if (isValid) {
